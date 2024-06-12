@@ -5,18 +5,17 @@ const b = a;
 c = b[0];
 c.push("qux");
 
-console.log(a);
-console.log(b);
-console.log(c);
+// console.log(a); //[ [ 'foo', 'bar', 'qux' ], 'baz' ]
+// console.log(b); // [ [ 'foo', 'bar', 'qux' ], 'baz' ]
+// console.log(c); // [ 'foo', 'bar', 'qux' ]
 
-//[ [ 'foo', 'bar', 'qux' ], 'baz' ]
-// [ [ 'foo', 'bar', 'qux' ], 'baz' ]
-// [ 'foo', 'bar', 'qux' ]
-//Array is a reference type so b points to the same array as a.
+//The concept demonstrated here is variable as pointers.
+//So the variable b which is assigned to a points to the same array as a.
+//Any changes to a will affect b.
+//Similarly, c references array b, any change to c will affect a and b as they all point to the same array.
+
+// Why did c run?  I thought it wouldn't as the variable wasn't defined
 //If not in strict mode, undeclared variables are implicitly global
-
-// Why did c run?  I thought it wouldn't as the variable wasn't defined, if not in strict mode
-//Concept is variable as pointers
 
 // What is the value logged on the last three lines? What concept is demonstrated? -- Will
 
@@ -42,8 +41,6 @@ const originalArray = [1, 2, 3, 11];
 arrayModifier(originalArray);
 console.log(originalArray);
 
-// function didn't return a new array so that is why console.log is [ 100, 2, 3, 11 ]
-
 // Identify the variables, primitives, and objects in the code -- Generosa
 
 const person = {
@@ -61,24 +58,24 @@ updateAge(person);
 //Primitives: 'Alice', 30, 'Alice', 31, name, age (in person), name, age in obj
 //Objects: person, obj, function updateAge
 
-//keys in javascript objects are strings,
+//keys in javascript objects are strings
 
 // // Identify the variables, primitives, and objects in the code -- Generosa
 
-const person = {
-  name: "Alice",
-  age: 30,
-};
+// const person = {
+//   name: "Alice",
+//   age: 30,
+// };
 
-function updateAge(obj) {
-  obj = { name: "Alice", age: 31 };
-}
+// function updateAge(obj) {
+//   obj = { name: "Alice", age: 31 };
+// }
 
-let c = true;
+// let c = true;
 
-person[c] = "foo";
+// person[c] = "foo";
 
-updateAge(person);
+// updateAge(person);
 
 // Variables: person, updateAge, obj
 //Primitives: 'Alice', 30, 'Alice', 31, name, age (in person), name, age in obj
@@ -96,6 +93,6 @@ let word = "hello";
 let capitalizedWord = capitalize(word);
 let exclaimedWord = exclaim(capitalizedWord);
 
-console.log(word);
-console.log(capitalizedWord);
-console.log(exclaimedWord);
+// console.log(word);
+// console.log(capitalizedWord);
+// console.log(exclaimedWord);
