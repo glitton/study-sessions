@@ -6,8 +6,8 @@ function changeMyWord(word) {
 
 let myWord = "Hello";
 let myOtherWord = changeMyWord(myWord);
-console.log(myWord);
-console.log(myOtherWord);
+// console.log(myWord);
+// console.log(myOtherWord);
 
 // The strings Hello and HELLO will be logged to the console.
 //The first console log points to the global myWord variable initialized in line 7
@@ -34,13 +34,10 @@ function mutater(list) {
 }
 
 mutater(cities);
-console.log(cities);
+// console.log(cities);
 
-//The output to the console is the cities array of ["Tokyo", "Berlin", "Rio"]
-//Invoking the function passing the cities argument didn't affect the logging of
-//the global cities variable.
-//
-//When using pass by reference, you can't reassign the global variable but you can mutate it.
+//The output to the console is ["Tokyo", "Berlin", "Rio"]
+// Invoking the mutater function in line 36and passing the cities argument by reference leads to a reassignment of the array to list which now contains ["Banana", "Pineapple", "Apple"].  This list is mutated in the 2nd index with the string "Denver".  This function however, did not affect the cities array as passing by reference means that arrays can be mutated but not reassigned.  Thus the cities variable will remain the same when logged to the console.
 
 // What's happening in this code? What concepts this code demonstrate? - Fuad-
 let number1 = 10;
@@ -52,7 +49,7 @@ function sumOf(number1, number2) {
 }
 
 sumOf(number1, number2);
-console.log(sum);
+// console.log(sum);
 //The output of this code is a ReferenceError: summ is not defined
 //The reason for this is that the sum variable is out of scope.
 //The sum variable is scoped to the sumOf function and thus can't be accessed
@@ -82,3 +79,12 @@ concatenate(firstStudent, lastStudent);
 
 //Variables: students, copyOfStudents, firstStudent, lastStudent, concatenate, name1, name2
 //Objects: ["Chris", "Pete", "Nick"], concatenate function object, the array referenced by 'copyOfStudents'
+
+let words = ["scooby", "do", "on", "channel", "two"];
+
+words.forEach((word) => {
+  console.log(word);
+  words.shift();
+});
+
+console.log(words);
