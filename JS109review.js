@@ -12,8 +12,8 @@
 
 // console.log(num);
 
-let word = "hello";
-let newWord = word.replace("h", "j");
+// let word = "hello";
+// let newWord = word.replace("h", "j");
 
 // console.log(newWord); // 'jello', old word var doesn't change
 
@@ -47,7 +47,26 @@ let newWord = word.replace("h", "j");
 // console.log(myWords);
 // console.log(typeof finalWords);
 
-let myWords = ["Hello"];
-myWords[0] = myWords[0].toUpperCase();
+// let myWords = ["Hello"];
+// myWords[0] = myWords[0].toUpperCase();
 
+// console.log(myWords);
+
+// function changeMyWords(words) {
+//   console.log(words);
+//   words[0] = "Hi";
+// }
+
+// let myWords = ["Hello", "Goodbye"];
+// changeMyWords(myWords);
+// console.log(myWords);
+
+function changeMyWords(words) {
+  console.log(words);
+  words = ["Hi", "Goodbye"];
+}
+
+let myWords = ["Hello", "Goodbye"];
+// console.log(changeMyWords(myWords));
+changeMyWords(myWords);
 console.log(myWords);
