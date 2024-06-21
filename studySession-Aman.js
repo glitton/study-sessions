@@ -9,21 +9,27 @@ let myOtherWord = changeMyWord(myWord);
 // console.log(myWord);
 // console.log(myOtherWord);
 
-// The strings Hello and HELLO will be logged to the console.
-//The first console log points to the global myWord variable initialized in line 7
-//myOtherWord variable is assigned to the value of the function changeMyWord(myWord)
-//This function returns an uppercase string of Hello, which is HELLO resulting in
-//This string being logged to the console in line 10.
+/*
+The console logs Hello and HELLO.  
 
-// this code logs: Hello
-// HELLO
+In line 2, a changeMyWord function is declared with a parameter word.  This variable then applies the toUpperCase()
+method and a new string is saved to the word variable and then returned.
 
-// in line a variable `myWord` is declared and initialized to the string 'Hello'.
-// in line 8 a variable `myOtherWord` is declared and initialized to the return value of invoking the function `changeMyWord` passing `myWord` as argument.
-// the function `changeMyWord` receives a copy of the value of `myWord`.
-// in line 3 `myWord` is reassigned to the string 'HELLO' and the function return this value. HELLO'.and that is what is logged in line 10.
-// because this is primitive value, the global variable remains unchanged and  the value of the variable `myWord` is still 'Hello' and this is what is logged in line 9.
-// the concepts demonstrated in this code is immutability of primitive values
+In line 7, a myWord variable is initialized to the string "Hello".  The changeMyWord function is invoked with 
+the myWord variable as an argument.  Within the changeMyWord function, the upper case method is applied to myWord 
+and then returned.  The return value is saved to the myOtherWord variable in line 8.
+
+Since myWord is a string and therefore a primitive, the function receives the myWord 
+argument as pass-by-value. Applying the upper case method doesn't mutate myWord 
+but instead creates a new string.
+
+Logging myWord to the console outputs the value of the myWord global variable, Hello,  
+Logging myOtherWord to the console outputs the value of myOtherWord, HELLO, which is 
+the new string returned by invoking the function changeMyWord.
+
+This example demonstrates that primitives are immutable. 
+
+*/
 
 // What's the output and why? - Generosa
 let cities = ["Tokyo", "Berlin", "Rio"];
@@ -36,8 +42,23 @@ function mutater(list) {
 mutater(cities);
 // console.log(cities);
 
-//The output to the console is ["Tokyo", "Berlin", "Rio"]
-// Invoking the mutater function in line 36and passing the cities argument by reference leads to a reassignment of the array to list which now contains ["Banana", "Pineapple", "Apple"].  This list is mutated in the 2nd index with the string "Denver".  This function however, did not affect the cities array as passing by reference means that arrays can be mutated but not reassigned.  Thus the cities variable will remain the same when logged to the console.
+/*The output to the console is ["Tokyo", "Berlin", "Rio"]
+
+First, a cities variable is declared assigned to an array of strings ["Tokyo", "Berlin", "Rio"]
+In line 33, a mutater function is declared with list as a parameter.  In the function, list is assigned 
+an array of strings, ["Banana", "Pineapple", "Apple"] then re-assigns the 2nd index
+of the array to the string "Denver"
+
+In line 38, the mutator function is invoked passing the cities array by reference.  
+Within the function, the list variable is assigned a different array ["Banana", "Pineapple", "Apple"].  
+At this point, the global variable cities and the function variable list references two different arrays. 
+This is why when mutating the 2nd index of the variable list to the string "Denver", the cities global variable  
+doesn't change as this variable references a different array compared to list. 
+Logging the cities variable in line 39 outputs the global variable ["Tokyo", "Berlin", "Rio"].
+
+This example demonstrates how one can change values.  This example uses reassignment where the list variable 
+is reassigned from the value of the global cities array to the new array.  
+*/
 
 // What's happening in this code? What concepts this code demonstrate? - Fuad-
 let number1 = 10;
@@ -49,18 +70,16 @@ function sumOf(number1, number2) {
 }
 
 sumOf(number1, number2);
-// console.log(sum);
-//The output of this code is a ReferenceError: summ is not defined
-//The reason for this is that the sum variable is out of scope.
-//The sum variable is scoped to the sumOf function and thus can't be accessed
-//via the console.log which is outside the function scope
+console.log(sum);
 
 /*
-This will not log anything to the console, rather, it will raise a `reference error`. 
+The output of this code is ReferenceError: sum is not defined.  The reason for this
+reference error is because the variable sum is out of scope to the console.log method.
 
-This is because the `console log` call on line 33 is called in the global scope, and `sum` was a function-scoped local variable that was declared in the scope of the body of the `sumOf` function on line 28. When `sumOf` was invoked on line 32, Javascript temporarily ‘jumped’ into the body of the `sumOf` function, defined between lines 27 – 30, and it was initialised to the value of the two arguments `sumOf` was invoked with. `sum` was returned to the caller on line 29, but nothing was done with this return value, after which `sum` went out of scope. So by the time we attempt to log its value on line 33, it is out of scope and hence a `reference error` is raised. 
-The concepts demonstrated here are variable scope and use of values returned from a function
+The sum variable is scoped to the sumOf function and can't be accessed ouside 
+of it.
 
+This example demonstrates variable scoping rules.  
 
 */
 
@@ -77,14 +96,29 @@ function concatenate(name1, name2) {
 
 concatenate(firstStudent, lastStudent);
 
-//Variables: students, copyOfStudents, firstStudent, lastStudent, concatenate, name1, name2
-//Objects: ["Chris", "Pete", "Nick"], concatenate function object, the array referenced by 'copyOfStudents'
+/*
+Primitives: 
+  - The strings in the student array, Chris, Pete, and Nick
+  - the value of the variable firstStudent, which is a string
+  - the value of the variable lastStudent, which is a string
+  - the return value of the concatenate function which is a string comprised of
+  Chris and Nick
+
+Variables:
+- students, copyOfStudents, firstStudent, lastStudent, concatenate, name1, name2
+
+Objects:
+- the array students
+- the copyOfStudents which is another array
+- the function concatenate
+
+*/
 
 let words = ["scooby", "do", "on", "channel", "two"];
 
 words.forEach((word) => {
-  console.log(word);
+  // console.log(word);
   words.shift();
 });
 
-console.log(words);
+// console.log(words);
