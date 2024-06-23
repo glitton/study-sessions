@@ -12,6 +12,12 @@ myFunc();
 
 /*
 The output to the console is Hello, world! 
+A global variable hello is declared with the string "Hello, world!" as its value.
+Then a function myFunc is declared without any parameters and it outputs the 
+variable hello to the console.
+
+In line 11, myFunc is invoked.  The function because it doesn't have any parameters, looks for the variable hello 
+which is the global variable declared in line 7.  
 */
 
 /*

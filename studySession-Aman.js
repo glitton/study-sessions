@@ -70,7 +70,7 @@ function sumOf(number1, number2) {
 }
 
 sumOf(number1, number2);
-console.log(sum);
+// console.log(sum);
 
 /*
 The output of this code is ReferenceError: sum is not defined.  The reason for this
@@ -122,3 +122,9 @@ words.forEach((word) => {
 });
 
 // console.log(words);
+
+let generateVerb = (message) => "reading";
+let organizeSentence = (verb) => `He is ${verb().toUpperCase()}`;
+// let organizeSentence = (verb) => `He is ${verb}.toUpperCase()`;
+
+console.log(organizeSentence(generateVerb));
