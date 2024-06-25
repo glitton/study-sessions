@@ -125,6 +125,16 @@ words.forEach((word) => {
 
 let generateVerb = (message) => "reading";
 let organizeSentence = (verb) => `He is ${verb().toUpperCase()}`;
-// let organizeSentence = (verb) => `He is ${verb}.toUpperCase()`;
 
 console.log(organizeSentence(generateVerb));
+/*
+The console will output He is READING
+
+In line 130, the function object generateVerb is being passed in by reference to 
+the organizeSentence function.  The return value of generateVerb is now the 
+verb parameter of organizeSentence.  
+
+Within the function body of organizeSentence, the verb parameter is invoked which references 
+the return value of generateVerb.   Then the toUpperCase method is applied to this value
+returning the string He is READING
+*/
