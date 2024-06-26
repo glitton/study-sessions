@@ -45,10 +45,10 @@ function updateArray(arr1, arr2) {
   arr2.push(7);
 }
 
-const array1 = [1, 2, 3];
-const array2 = [1, 2, 3];
+// const array1 = [1, 2, 3];
+// const array2 = [1, 2, 3];
 
-updateArray(array1, array2);
+// updateArray(array1, array2);
 
 // console.log(array1);
 // console.log(array2);
@@ -59,8 +59,9 @@ const a = 0;
 const b = "0";
 const c = "";
 
-console.log(a || b); // 0
-console.log(b && c); //
-console.log(a && b); //
+console.log(a || b); // 0 the number OR returns true when one is true
+console.log(b && c); // '' empty string returns true when both are true
+console.log(a && b); // 0 the string - number 0 is falsy, string 0 is truthy
+// console.log(typeof b);
 
 // functions return a value, expressions evaluate to a value
