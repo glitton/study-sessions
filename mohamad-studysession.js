@@ -10,17 +10,14 @@ myFunc(myVar);
 /*
 The console will log [2].  
 
-In line 8, when invoking myFunc passing in myVar argument,the function parameter 
-receives a reference of `myVar` on 2. 
-mvar in the function parameter and myvar in the global variable are pointing to same array, 
-so when we mutate myvar in line 5, we are accessing the first index of the array and changed to 
-`2` this mutation effect the global variable mutates the global myVar array, 
-changing the value at index 0 from 1 to 2.
+When invoking myFunc passing myVar as an argument, the function receives a reference of 
+the global variable `myVar`. This means that the function parameter, myVar  
+and the myVar global variable are pointing to same array, 
 
-Since myVar is passed by reference, this variable points to the global myVar array.
+When myFunc executes line 5, it mutates the array by assigning index 0 to
+`2`.  This mutation affects the global myVar array as well.  
 
-Reassigning index 0 to 2 in the function mutates the array and since the global
-variable myVar points to the same array, logging it to the console outputs [2]
+Thus logging myVar to the console outputs [2]
 */
 
 /*
@@ -45,13 +42,12 @@ console.log(num);
 /*
 The output is 1.
 
-A global variable num is declared and assigned to the value 1. A function myFunc
-is declared with the parameter `num`. 
+A global variable `num` is declared and assigned to the value 1. 
+A function myFunc is declared with the parameter `num`. 
 
-When myFunc is invoked with the argument `num` it is being passed by value 
-meaning it gets a copy of the variable `num`.   
+When myFunc is invoked with the argument `num` it shadows the global variable `num`
+meaning it doesn't have access to this global variable. When the function assigns
+`2` to `num` it does not affect the global variable `num`. 
 
-In the function, `num` is assigned the value 2.  However, the global variable 
-`num` still has the value of 1 as it is a primitive and thus immutable.  
 This is why logging `num` will output 1.  
 */
