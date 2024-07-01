@@ -1,10 +1,10 @@
-let myVar = [1];
+// let myVar = [1];
 
-function myFunc(myVar) {
-  myVar[0] = 2;
-}
+// function myFunc(myVar) {
+//   myVar[0] = 2;
+// }
 
-myFunc(myVar);
+// myFunc(myVar);
 // console.log(myVar);
 
 /*
@@ -20,24 +20,15 @@ When myFunc executes line 5, it mutates the array by assigning index 0 to
 Thus logging myVar to the console outputs [2]
 */
 
-/*
-This code logs `[2]`.
-in line 1 we declared a variable called `myVar` and we initialized it to  it an array with a single element of 1.
-in line 9 we invoke the function `myFunc` and pass in the `myVar` variable as an argument.
-the function `myFunc` recieves a reference of `myVar` variable,this acts pass by reference.
-on line 6 `myVar` is mutated, the first element of the array is changed to 2.This mutation effects the original array because `myVar` in the function paramter and the   `mVar` variable in the global are poiting to the same memory location.
-Therefore line 10 logs the mutated `myVar` variable to the console which is `[2]`.
-*/
-
 // What is the output of the following code and explain why.
-let num = 1;
+// let num = 1;
 
-function myFunc(num) {
-  num = 2;
-}
+// function myFunc(num) {
+//   num = 2;
+// }
 
-myFunc(num);
-console.log(num);
+// myFunc(num);
+// console.log(num);
 
 /*
 The output is 1.
@@ -51,3 +42,12 @@ meaning it doesn't have access to this global variable. When the function assign
 
 This is why logging `num` will output 1.  
 */
+
+let myVar = [1];
+
+function myFunc(myVar) {
+  myVar[0] = 2;
+}
+
+myFunc(); // TypeError: Cannot set properties of undefined (setting '0')
+console.log(myVar); //Shadowing
