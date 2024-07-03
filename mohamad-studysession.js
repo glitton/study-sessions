@@ -50,4 +50,4 @@ function myFunc(myVar) {
 }
 
 myFunc(); // TypeError: Cannot set properties of undefined (setting '0')
-console.log(myVar); //Shadowing
+// console.log(myVar); //Shadowing
