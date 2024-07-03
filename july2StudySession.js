@@ -31,13 +31,13 @@ In line 13, when greet is invoked with the hello argument, this argument
 references the same hello function object meaning it can be invoked and 
 logs the string hello.   
 
-Snippet 2 demonstrates the concept of variables as pointers
+Snippet 2 demonstrates the concept of functions as object that can be
+assigned to variables which are pointers.  
 
 A function hello is declared without any parameters which logs the string hello.
-A variable greet is declared assigned to hello which points to the same object
-as the hello function.  This means that the variable greet can be invoked.  Invoking
-greet in line 21 points to the same object as the hello function thus logs the 
-string hello to the console.  
+A variable greet is declared assigned to hello which points to the hello function.  
+When invoking greet in line 21, since it points to the same object as the hello function 
+the console logs the string hello.  
 
 */
 
