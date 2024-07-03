@@ -36,7 +36,6 @@ For the last line, which is a console.log method with the name argument,
 it logs the global variable "John" because of scope.  
 This console log method has access to the global variable declared in line 14 
 and not the name variable declared within the printName function.  
-
 */
 
 // What's gonna log at the end of this code snippet and why? - Esteban
@@ -50,7 +49,8 @@ function mutater(list) {
 mutater(cities);
 console.log(cities);
 
-// Explain why firstName contains the string "Aman" while the lastName contains the string "Shinwari"? - Mohammed
+// Explain why firstName contains the string "Aman"
+// while the lastName contains the string "Shinwari"? - Mohammed
 let firstName = "Aman" || "Zakir";
 let lastName = "" || "Shinwari";
 console.log(`My first name is ${firstName} and my last name is ${lastName}.`);
