@@ -24,13 +24,13 @@ function printName() {
 }
 
 printName();
-console.log(name); // Output: John
+// console.log(name); // Output: John
 
 /*
 The printName function invocation logs the string "Emma" because the name variable
 in the function on line 20 shadows the global variable declared on line 17.  As
 a result, when the function is invoked in line 24, the function logs the name variable
-declared on line 20.  
+declared on line 20, which is "Emma"
 
 For the last line, which is a console.log method with the name argument, 
 it logs the global variable "John" because of scope.  
@@ -47,11 +47,17 @@ function mutater(list) {
 }
 
 mutater(cities);
-console.log(cities);
+// console.log(cities);
 
 // Explain why firstName contains the string "Aman"
 // while the lastName contains the string "Shinwari"? - Mohammed
 let firstName = "Aman" || "Zakir";
-let lastName = "" || "Shinwari";
+// let lastName = "" || "Shinwari";
+
+let lastName = "" || 0; //returns the last evaluated value
 console.log(`My first name is ${firstName} and my last name is ${lastName}.`);
 // Logs: "My first name is Aman and my last name is Shinwari."
+
+/*
+Short circuiting
+*/
