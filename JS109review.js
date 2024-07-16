@@ -23,13 +23,17 @@
 
 // console.log(finalWord);
 
-// let myWord = "Hello";
-// myWord.repeat(3);
-// console.log(myWord);
-// myWord.replace("H", "J");
-// console.log(myWord);
-// myWord.toUpperCase();
-// console.log(myWord);
+let myWord = "Hello";
+myWord.repeat(3);
+console.log(myWord); //Hello
+myWord.replace("H", "J");
+console.log(myWord); //Hello
+myWord.toUpperCase();
+console.log(myWord); //Hello
+/*
+Output is Hello three times.  Each of the methods, repeat, replace and toUpperCase return new strings thus the original variable myWord doesn't 
+change.  
+*/
 
 // let myWords = ["Hello"];
 // myWords.push("Goodbye");
@@ -71,9 +75,9 @@
 // changeMyWords(myWords);
 // console.log(myWords);
 
-let array1 = [1, 2, 3];
-let array2 = array1;
-array1[1] = 4;
+// let array1 = [1, 2, 3];
+// let array2 = array1;
+// array1[1] = 4;
 // console.log(array2);
 
 /*
@@ -89,10 +93,10 @@ array2 will reflect the change as they are both pointing to the same array.
 This is why the output is [1, 4, 3]
 */
 
-function findMaxValue(...nums) {
-  let largestNum = Math.max(...nums);
-  return largestNum;
-}
+// function findMaxValue(...nums) {
+//   let largestNum = Math.max(...nums);
+//   return largestNum;
+// }
 
 // console.log(findMaxValue(1, 6, 3, 2));
 // console.log(findMaxValue(-1, -6, -3, -2));
@@ -138,4 +142,4 @@ function isNotANumber(value) {
 }
 
 // console.log(isNotANumber("hello"));
-console.log("5" + 1);
+// console.log("5" + 1);
