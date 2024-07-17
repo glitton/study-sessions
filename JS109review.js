@@ -23,13 +23,13 @@
 
 // console.log(finalWord);
 
-let myWord = "Hello";
-myWord.repeat(3);
-console.log(myWord); //Hello
-myWord.replace("H", "J");
-console.log(myWord); //Hello
-myWord.toUpperCase();
-console.log(myWord); //Hello
+// let myWord = "Hello";
+// myWord.repeat(3);
+// console.log(myWord); //Hello
+// myWord.replace("H", "J");
+// console.log(myWord); //Hello
+// myWord.toUpperCase();
+// console.log(myWord); //Hello
 /*
 Output is Hello three times.  Each of the methods, repeat, replace and toUpperCase return new strings thus the original variable myWord doesn't 
 change.  
@@ -38,18 +38,20 @@ change.
 // let myWords = ["Hello"];
 // myWords.push("Goodbye");
 
-// console.log(myWords);
+// console.log(myWords); //["Hello", "Goodbye"]
 
 // let myWords = ["Hello"];
 // myWords.concat(["Goodbye"]);
 
-// console.log(myWords);
+// console.log(myWords); //["Hello"]  concat returns a new array, keeps
+// //original array unchanged
 
 // let myWords = ["Hello"];
-// let finalWords = myWords[0].toUpperCase();
+// let finalWords = myWords[0].toUpperCase(); // returns a new string
 
-// console.log(myWords);
-// console.log(typeof finalWords);
+// console.log(myWords); //["Hello"]
+// console.log(finalWords);
+//"HELLO";
 
 // let myWords = ["Hello"];
 // myWords[0] = myWords[0].toUpperCase();
@@ -57,23 +59,24 @@ change.
 // console.log(myWords);
 
 // function changeMyWords(words) {
-//   console.log(words);
+//   console.log(words); //["Hello", "Goodbye"]
 //   words[0] = "Hi";
 // }
 
 // let myWords = ["Hello", "Goodbye"];
-// changeMyWords(myWords);
-// console.log(myWords);
+// changeMyWords(myWords); //["Hi", "Goodbye"]
+// console.log(myWords); //["Hi", "Goodbye"]
 
-// function changeMyWords(words) {
-//   console.log(words);
-//   words = ["Hi", "Goodbye"];
-// }
+function changeMyWords(words) {
+  console.log(words); //["Hello", "Goodbye"]
+  words = ["Hi", "Goodbye"]; //reassignment so words and myWords now
+  //reference two different arrays
+}
 
-// let myWords = ["Hello", "Goodbye"];
-// // console.log(changeMyWords(myWords));
-// changeMyWords(myWords);
-// console.log(myWords);
+let myWords = ["Hello", "Goodbye"];
+// console.log(changeMyWords(myWords));
+changeMyWords(myWords);
+console.log(myWords); //["Hello", "Goodbye"]
 
 // let array1 = [1, 2, 3];
 // let array2 = array1;
