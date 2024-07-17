@@ -1,11 +1,12 @@
-let myVar = [1];
+// let myVar = [1];
 
-function myFunc() {
-  myVar = [2];
-}
+// function myFunc() {
+//   // console.log(myVar);
+//   myVar = [2]; //searches the global scope
+// }
 
-myFunc();
-// console.log(myVar);
+// myFunc(); //pass-by-reference
+// console.log(myVar); //[2]
 
 let num = 1;
 
@@ -14,4 +15,4 @@ function newVar(num) {
 }
 
 newVar();
-console.log(num);
+console.log(num); //1
