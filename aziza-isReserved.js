@@ -52,16 +52,17 @@ function isReserved(name) {
   return RESERVED_KEYWORDS.some((reserved) => name === reserved);
 }
 
-//original problem
-// function isReserved(name) {
-//   RESERVED_KEYWORDS.forEach((reserved) => {
-//     if (name === reserved) {
-//       return true;
-//     }
-//   });
+//original problem, forEach returns undefined which is false
+function isReserved(name) {
+  let status = RESERVED_KEYWORDS.forEach((reserved) => {
+    if (name === reserved) {
+      return true;
+    }
+    return false;
+  });
 
-//   return false;
-// }
+  return status;
+}
 
 console.log(isReserved("monkey")); // false
 console.log(isReserved("patch")); // false
