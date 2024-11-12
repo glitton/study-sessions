@@ -73,3 +73,54 @@ function groupAnagrams(arr) {
 }
 console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
 // [["eat", "tea", "ate"], ["tan", "nat"], ["bat"]]
+
+/*Write a function that accepts an array of 10 integers (between 0 and 9), that returns a string of those numbers in the form of a phone number.
+Input: array of 10 integers
+Output: string of the 10 integers formatted like a phone number
+"(123) 456-7890"
+Rules: Formatted as a phone number
+E:
+D: 
+A:
+- Initialize an empty string variable phoneNumber
+- Iterate three times through the array
+  - First time is to create the ()
+  - Second time to create the second portion 456-
+  - Third time is to create the final four strings
+FIRST ITERATION  
+- Append "(" to the string then iterate 3 times through the array, and append the first three numbers then append ")"
+SECOND ITERATION - iterate 3 times, append the next three digits
+LAST ITERATION  - iterate 4 times, append the next 4 digits
+
+*/
+
+function createPhoneNumber(array) {
+  let firstPart = 3;
+  let secondPart = 6;
+  let thirdPart = 10;
+
+  let phoneNumber = "(";
+
+  for (let idx = 0; idx < firstPart; idx += 1) {
+    phoneNumber += array[idx];
+  }
+  phoneNumber += ") ";
+
+  for (let idx2 = firstPart; idx2 < secondPart; idx2 += 1) {
+    phoneNumber += array[idx2];
+  }
+  phoneNumber += "-";
+  for (let idx3 = secondPart; idx3 < thirdPart; idx3 += 1) {
+    phoneNumber += array[idx3];
+  }
+  return phoneNumber;
+}
+
+function createPhoneNumber(array) {
+  return `(${array.slice(0, 3).join("")}) ${array.slice(3, 6).join("")}-${array
+    .slice(6)
+    .join("")}`;
+}
+
+console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])); // => returns "(123) 456-7890"
+// The returned format must be correct in order to complete this challenge.
